@@ -1,0 +1,11 @@
+version: '3'
+services:
+  my-website:
+    image: nginx:alpine
+    container_name: devops-test-web
+    ports:
+      - "8090:80"  # พี่เปลี่ยนเป็นพอร์ต 8090 นะ จะได้ไม่ชนตัวเก่า
+    volumes:
+      - ./:/usr/share/nginx/html # สั่งให้เอาไฟล์ html ในนี้ ไปโชว์หน้าเว็บ
+    restart: always
+    
